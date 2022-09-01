@@ -1,0 +1,9 @@
+USE CUSTOMER_DB;
+
+DELIMITER $$
+CREATE PROCEDURE add2num(IN a1 INT, IN a2 INT,OUT a3 INT)
+BEGIN
+SET a3 = a1+a2;
+END $$
+
+CALL add2num(0,23,@a3);$$ SELECT @a3;$$
