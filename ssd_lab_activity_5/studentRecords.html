@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="newBody">
+    <header>
+        <h1>student Records</h1>
+    </header>
+    
+    <main id="main">
+    <div id="myDIV" class="header">
+        
+        <input type="text" id="myInput1" placeholder="Roll no..">
+        <input type="text" id="myInput2" placeholder="Student Name">
+        <button onclick="newElement()" class="Btn1">Add New</burronn>
+    </div>
+
+    <table id="mytable">
+        <tr>
+          <th>Roll no..</th>
+          <th>Student Name</th>
+         
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+
+        </tr>
+        <tr>
+          <td>Ernst Handel</td>
+          <td>Roland Mendel</td>
+        
+        </tr>
+       
+      </table>
+      
+
+
+      <button onclick="delElement()" class="Btn2">DeleteLastRecords</burronn>
+   </main>
+
+   <script>
+    let data = [];
+
+
+
+    function delElement(){
+        var table = document.getElementById("mytable");
+        var l = table.rows.length;
+        if(l > 0){
+            let row = table.rows;
+           
+            row[l-1].remove();
+        }
+    }
+    // Create a "close" button and append it to each list item
+    
+    
+    function newElement() {
+      var table = document.getElementById("mytable");
+      var inputValue1 = document.getElementById("myInput1").value;
+      var inputValue2 = document.getElementById("myInput2").value;
+      var t = document.createTextNode(inputValue1);
+      var t2 = document.createTextNode(inputValue2);
+     
+      if (inputValue1 === '' || inputValue2 === '') {
+        alert("Empty feilds please write something ");
+      } else {
+        data.push({inputValue1,inputValue2});
+        let l = data.length;
+        let row = table.insertRow(l);
+        let c1 = row.insertCell(0);
+        let c2 = row.insertCell(1);
+        c1.innerHTML = inputValue1;
+        c2.innerHTML = inputValue2;
+
+      }
+      
+      document.getElementById("myInput1").value = "";
+      document.getElementById("myInput2").value = "";
+    //   var span = document.createElement("SPAN");
+    //   var txt = document.createTextNode("\u00D7");
+    //   span.className = "close";
+    //   span.appendChild(txt);
+    //   li.appendChild(span);
+    
+    //   for (i = 0; i < close.length; i++) {
+    //     close[i].onclick = function() {
+    //       var div = this.parentElement;
+    //       div.style.display = "none";
+    //     }
+    //   }
+    }
+    </script>
+    
+</body>
+
+</html>
