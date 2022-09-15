@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/js/script.js"></script> 
+</head>
+<body>
+
+ <h1>Team Form</h1>
+
+ <table>
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+ 
+   <tr>
+    <td>
+     <label for="name">
+      Manager Name
+     </label>
+    </td>
+    <td><input type="text" id="name" required />
+    </td>
+   </tr>
+   <tr>
+    <td><label for="email">
+     Group Email
+     </label>
+    </td>
+    <td><input type="email" id="email" required/>
+    </td>
+   </tr>
+   <tr>
+    <td><label for="userName">
+      Server userName
+     </label>
+    </td>
+    <td><input type="userName" id="userName" required onchange ="userValid()" pattern="(?=,*\d)(?=,*[A-z])(?=,*[a-z]).*"/><td><p id="is uvalid"></p></td>
+    </td>
+    <td><p></p></td>
+   </tr>
+   <tr>
+    <td><label for="Password">
+      Server Password
+     </label>
+    </td>
+    <td><input type="Password" id="Password" required/>
+    </td>
+   </tr>
+   <tr>
+    <td><label for="CPassword">
+      Confirm Password
+     </label>
+    </td>
+    <td><input type="Password" id="CPassword" required onchange="passValid()"/> <td><p id="is valid"></p></td>
+    </td>
+   </tr>
+   <tr>
+    <td><label for="Lead">
+        Team Lead
+     </label>
+    </td><td>
+   
+  <select name="leaders" id="leaders" required>
+    <option value="Lead">Avishek</option>
+    <option value="Lead">Bhanuj</option>
+    <option value="Lead">Yash</option>
+    <option value="Lead">Mohit</option>
+  </select></td>
+    </td>
+   </tr>
+   <tr>
+    <td><label for="Team Members">
+      Team Members
+     </label>
+    </td>
+    <td><input id="Team Members" />
+    <td><input id="Team Members" />
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+        <input type="submit" value="Submit" >
+       </td>
+   </tr>
+   
+  </form>
+ </table>
+
+
+
+</body>
+
+</html>
